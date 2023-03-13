@@ -26,6 +26,12 @@ Route::group(['middleware' => ['guest']], function () {
     // Register
     Route::get('/register', [App\Http\Controllers\AuthController::class, 'showRegister'])->name('register');
     Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register.register');
+
+    // Mot de passe oublié
+    Route::get('forget-password', [App\Http\Controllers\AuthController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+    Route::post('forget-password', [App\Http\Controllers\AuthController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+    Route::get('reset-password/{token}', [App\Http\Controllers\AuthController::class, 'showResetPasswordForm'])->name('reset.password.get');
+    Route::post('reset-password', [App\Http\Controllers\AuthController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 });
 
 /**

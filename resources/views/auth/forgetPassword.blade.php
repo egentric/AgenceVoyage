@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <title>Connexion</title>
+    <title>Mot de passe oublié</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -20,36 +20,21 @@
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-5">
                         <div class="auth-wrap p-4 p-md-5 mb-5">
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="fa fa-user-o"></span>
-                            </div>
-                            <h3 class="text-center mb-4">Se connecter</h3>
+                            <h3 class="text-center mb-4">Réinitialiser mon mot de passe</h3>
                             @include('components.alert')
-                            <form method="POST" action="{{ route('login.connection') }}">
+                            <form method="POST" action="{{ route('forget.password.post') }}">
                                 @csrf
 
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" id="email" name="email">
                                 </div>
-                                <div class="form-group">
-                                    <label for="password">Mot de passe</label>
-                                    <input type="password" class="form-control" id="password" name="password">
-                                </div>
-
-                                <a href="{{route('forget.password.get')}}" class="form-text text-muted w-fit ml-auto d-block">
-                                    Mot de passe oublié
-                                </a>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary rounded submit p-3 px-5">Se connecter</button>
+                                    <button type="submit" class="btn btn-primary rounded submit p-3 px-5">Réinitialiser</button>
                                 </div>
                             </form>
                         </div>
-
-                        <a href="{{route('register')}}" class="form-text text-muted text-center d-block">
-                            Créer son compte
-                        </a>
                     </div>
                 </div>
             </div>
