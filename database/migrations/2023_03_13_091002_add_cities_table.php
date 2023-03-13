@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('idCountry')
                 ->references('id')
                 ->on('countries');
+                $table->timestamps();
         });
     }
 

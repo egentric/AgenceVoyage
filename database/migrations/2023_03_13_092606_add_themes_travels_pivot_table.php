@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('themes_travels', function (Blueprint $table) {
             $table->id();
-            
+
             $table->bigInteger('idTheme')->unsigned();
             $table->foreign('idTheme')
                 ->references('id')
@@ -23,6 +23,8 @@ return new class extends Migration
             $table->foreign('idTravel')
                 ->references('id')
                 ->on('travels');
+
+            $table->timestamps();
         });
     }
 
@@ -31,7 +33,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('themes_travels', function (Blueprint $table) { 
+        Schema::table('themes_travels', function (Blueprint $table) {
             $table->dropColumn('idTheme');
             $table->dropColumn('idTravel');
         });

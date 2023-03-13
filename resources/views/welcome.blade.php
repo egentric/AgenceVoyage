@@ -13,6 +13,6 @@
         @vite(['resources/css/app.scss', 'resources/js/app.js'])
     </head>
     <body class="antialiased">
-        
+        Test branch nico
     </body>
 </html>

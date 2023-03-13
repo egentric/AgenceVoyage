@@ -1,0 +1,83 @@
+#auth {
+  font-family: $font-primary;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: normal;
+  background: #f8f9fd;
+  color: lighten(#000, 50%);
+
+  .auth-section {
+    padding: 7em 0;
+
+    .auth-wrap {
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+      box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+      h3 {
+        font-weight: 700;
+        font-size: 20px;
+        color: $primary;
+      }
+      .icon {
+        width: 80px;
+        height: 80px;
+        background: $primary;
+        border-radius: 50%;
+        font-size: 30px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        span {
+          color: #fff;
+        }
+      }
+    }
+
+    .btn {
+      cursor: pointer;
+      box-shadow: none !important;
+      font-size: 15px;
+      &:hover,
+      &:active,
+      &:focus {
+        outline: none;
+      }
+      &.btn-primary {
+        background: $primary !important;
+        border: 1px solid $primary !important;
+        color: #FFF !important;
+        &:hover {
+          border: 1px solid $primary;
+          background: transparent;
+          color: $primary;
+        }
+        &.btn-outline-primary {
+          border: 1px solid $primary;
+          background: transparent;
+          color: $primary;
+          &:hover {
+            border: 1px solid transparent;
+            background: $primary;
+            color: #FFF;
+          }
+        }
+      }
+    }
+
+	.form-group{
+		position: relative;
+		.submit{
+			position: absolute;
+			top: 20px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			@media screen and (max-width: 768px){
+				top: 0;
+			}
+		}
+	}
+  }
+}

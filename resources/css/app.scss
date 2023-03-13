@@ -1,1 +1,31 @@
 @import 'variables';
+
+/* Components */
+@import 'components/form';
+@import 'components/checkbox';
+
+/* Views */
+@import 'views/auth';
+
+
+a {
+	transition: .3s all ease;
+	color: $primary;
+	&:hover, &:focus {
+		text-decoration: none !important;
+		outline: none !important;
+		box-shadow: none;
+		color: $primary;
+	}
+}
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: $font-primary;
+	color: #000;
+}
+
+.bg-primary{
+	background: $primary !important;
+}
