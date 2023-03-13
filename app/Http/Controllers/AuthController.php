@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -14,9 +17,9 @@ class AuthController extends Controller
      * 
      * @return Renderable
      */
-    public function show()
+    public function showLogin()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     /**
@@ -43,6 +46,28 @@ class AuthController extends Controller
     protected function authenticated(Request $request, $user) 
     {
         return redirect('/dashboard');
+    }
+
+    /**
+     * Affichage de la page register
+     * 
+     * @return Renderable
+     */
+    public function showRegister()
+    {
+        return view('auth.register');
+    }
+
+    /**
+     * Traitement de la demande de connexion
+     * 
+     */
+    public function register(RegisterRequest $request)
+    {
+        $user = User::create(array_merge($request->validated(), [
+            'password' => Hash::make($request->password),
+        ]));
+        return redirect(route('login'))->with('success', 'Votre compte à été créé.');
     }
 
     /**

@@ -13,13 +13,13 @@
 
 </head>
 
-<body id="login">
+<body id="auth">
     <main>
-        <section class="login-section">
+        <section class="auth-section">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-5">
-                        <div class="login-wrap p-4 p-md-5">
+                        <div class="auth-wrap p-4 p-md-5 mb-5">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="fa fa-user-o"></span>
                             </div>
@@ -36,12 +36,20 @@
                                     <label for="password">Mot de passe</label>
                                     <input type="password" class="form-control" id="password" name="password">
                                 </div>
-                               
+
+                                <a href="" class="form-text text-muted w-fit ml-auto d-block">
+                                    Mot de passe oublié
+                                </a>
+
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary rounded submit p-3 px-5">Se connecter</button>
                                 </div>
                             </form>
                         </div>
+
+                        <a href="{{route('register')}}" class="form-text text-muted text-center d-block">
+                            Créer son compte
+                        </a>
                     </div>
                 </div>
             </div>
