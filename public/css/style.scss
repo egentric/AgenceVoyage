@@ -1,0 +1,210 @@
+  // RESET CSS
+  // ===============================================================
+
+  * {
+    margin: 0;
+    padding: 0;
+}
+
+// VARIABLES
+// ================================================================
+
+$blue1: #023059;
+$blue2: #5D7CA6;
+$blue3: #73A2BF;
+
+$beige: #F2CAA7;
+
+$chestnut: #59362E;
+
+$red1: #A63C3C;
+$red2: #F2594B;
+
+$grey1: #444444;
+
+// GLOBAL
+// ================================================================
+
+body {
+    font-family: 'Mukta', sans-serif;
+    color: $chestnut;
+    background-color: $beige;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+        color: $blue1;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+        color: $blue1;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+h4 {
+    font-family: 'Merriweather', serif;
+    color: $blue1;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h5 {
+    font-family: 'Merriweather', serif;
+    color: $blue1 !important;
+}
+
+// CARD
+// ================================================================
+
+.card {
+    border-color: $blue1;
+    margin-top: 2rem;
+    border-radius: 5px 5px 0px 0px;
+    text-decoration: none;
+}
+
+.card-header {
+    background-color: $blue2;
+}
+
+.card-body {
+    background-color: $blue3;
+
+    a {
+        color: $blue1;
+    }
+
+    a:hover {
+        color: $chestnut;
+    }
+
+}
+
+.card-title {
+    color: $blue2;
+}
+
+// TABLEAU
+// ================================================================
+table{
+border-color: $blue1 !important;
+border: 1px solid;
+
+tbody tr:nth-child(even) {
+    background-color: $beige;
+    
+}
+
+thead {
+    background-color: $blue1;
+    color: $beige;
+    // text-align: center;
+}
+
+tbody {
+    color: $blue1;
+}
+
+}
+
+// BOUTTON
+// ================================================================
+
+.btnBlue {
+    // background-color: $grey3;
+    border-radius: 6px;
+    border-color: $blue1;
+    padding: 1px 6px 1px 6px;
+    margin-bottom: 5px;
+    color: $blue1 !important;
+}
+
+.btnBlue:hover {
+    transition: 0.5s;
+    background-color: $chestnut;
+    color: $beige !important;
+}
+
+.btnRed {
+    border-radius: 6px;
+    border-color: $red1;
+    padding: 1px 6px 1px 6px;
+    margin-bottom: 5px;
+    color: $red1;
+}
+
+.btnRed:hover {
+    transition: 0.5s;
+    background-color: $red1;
+    color: $beige !important;
+}
+
+
+// Formulaire
+// ================================================================
+
+select {
+    background-color: $beige !important;
+    color: $grey1 !important;
+}
+
+input {
+    background-color: $beige !important;
+    color: $grey1 !important;
+}
+
+textarea {
+    background-color: $beige !important;
+    color: $grey1 !important;
+}
+
+.ck {
+    background-color: $beige !important;
+    color: $grey1 !important;
+
+}
+
+// NAVBAR
+// ================================================================
+
+nav {
+    background-color: $blue1 !important;
+    color: $beige;
+
+    a {
+        color: $beige !important;
+    }
+
+    a:hover {
+        color: $blue3 !important;
+    }
+}
+
+// MENU DASHBOARD
+// ================================================================
+
+.menuGauche {
+    background-color: $blue2;
+
+    a {
+        color: $blue1;
+    }
+
+    a:hover {
+        color: $beige;
+    }
+}
+
+// // LIEN DASHBOARD=================
+
+a {
+  text-decoration: none !important;
+}
