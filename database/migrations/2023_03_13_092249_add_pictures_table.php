@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('idTravel')
                 ->references('id')
                 ->on('travels');
+            $table->timestamps();
         });
     }
 

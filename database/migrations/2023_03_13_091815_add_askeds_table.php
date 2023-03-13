@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreign('idTravel')
                 ->references('id')
                 ->on('travels');
+            $table->timestamps();
         });
     }
 
@@ -33,7 +34,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('askeds', function (Blueprint $table) { 
+        Schema::table('askeds', function (Blueprint $table) {
             $table->dropColumn('idUser');
             $table->dropColumn('idTravel');
         });

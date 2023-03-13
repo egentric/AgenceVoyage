@@ -43,6 +43,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/', function() { 
             return 'Page access only admin';
         });
+        Route::resource('/themes', \App\Http\Controllers\ThemeController::class);
+        Route::resource('/types', \App\Http\Controllers\TypeController::class);
+        Route::resource('/countries', \App\Http\Controllers\CountryController::class);
+        Route::resource('/cities', \App\Http\Controllers\CityController::class);
     });
     // Déconnexion
     Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');

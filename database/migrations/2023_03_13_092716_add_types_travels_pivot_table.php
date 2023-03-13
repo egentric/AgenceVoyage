@@ -23,6 +23,8 @@ return new class extends Migration
             $table->foreign('idTravel')
                 ->references('id')
                 ->on('travels');
+
+            $table->timestamps();
         });
     }
 
@@ -31,7 +33,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('types_travels', function (Blueprint $table) { 
+        Schema::table('types_travels', function (Blueprint $table) {
             $table->dropColumn('idType');
             $table->dropColumn('idTravel');
         });
