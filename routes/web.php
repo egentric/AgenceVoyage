@@ -39,6 +39,11 @@ Route::group(['middleware' => ['guest']], function () {
  */
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::group(['middleware' => ['role:admin'], 'prefix' => 'dashboard'], function () {
+        Route::get('/', function() { 
+            return 'Page access only admin';
+        });
+    });
     // Déconnexion
     Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 });
