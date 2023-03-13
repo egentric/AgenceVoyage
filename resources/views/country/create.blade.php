@@ -46,7 +46,7 @@
 
 
                 <div class="form-group col-sm-8">
-                    <button type="submit" class="btn btnYellow rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Ajouter</button>
+                    <button type="submit" class="btn btnblue rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Ajouter</button>
                 </div>
             </form>
         </div>

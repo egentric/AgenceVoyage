@@ -46,14 +46,16 @@
 
 
                 <div class="form-group col-sm-8">
-                    <button type="submit" class="btn btnYellow rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Modifier</button>
+                    <button type="submit" class="btn btnblue rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Modifier</button>
+                    <a href="{{ route('countries.index')}}" class="btn btnBlue"><i class="bi bi-arrow-return-left"></i> Retour à la liste</a>
+
                 </div>
             </form>
 
             <form action="{{route('countries.destroy', $country)}}" method="post">
                 @CSRF
                 @method('delete')
-                <button type="submit" class=" mt-3 btn btnRed">Supprimer le pays</button>
+                <button type="submit" class=" mt-3 btn btnRed"><i class="bi bi-trash3"></i> Supprimer le pays</button>
             </form>
         </div>
     </div>
