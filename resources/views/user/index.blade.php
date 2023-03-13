@@ -38,7 +38,7 @@
                             <th scope="col">Role</th>
                             <th scope="col">Date de création</th> --}}
 
-                            {{-- <th scope="col">Action</th> --}}
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,12 +50,12 @@
                             <td>{{$user->lastName}}</td>
                             <td>{{$user->email}}</td>
                             <td>
-                                <a href="{{ route('user.show', $user->id)}}" class="btn btn-sm"><i class="bi bi-eye icone"></i> Voir</a>
-                                <a href="{{ route('user.edit', $user->id)}}" class="btn btn-sm"><i class=" bi bi-pencil-square"></i> Editer</a>
+                                <a href="{{ route('user.show', $user->id)}}" class="btn btnBlue btn-sm"><i class="bi bi-eye icone"></i> Voir</a>
+                                <a href="{{ route('user.edit', $user->id)}}" class="btn btnBlue btn-sm"><i class=" bi bi-pencil-square"></i> Editer</a>
                                 <form action="{{ route('user.destroy', $user->id)}}" method="POST" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm"" type=" submit"><i class="bi bi-trash3"></i> Supprimer</button>
+                                    <button class="btn btnRed btn-sm"" type=" submit"><i class="bi bi-trash3"></i> Supprimer</button>
                             </td>
                         </tr>
                         @endforeach

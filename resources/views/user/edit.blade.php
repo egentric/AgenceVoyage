@@ -45,14 +45,14 @@
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label>prénom</label>
-                                <input required type="text" name="firstname" class="form-control" value="{{ $user->firstname }}" id='firstName'>
+                                <label>Prénom</label>
+                                <input required type="text" name="firstName" class="form-control" value="{{ $user->firstName }}" id='firstName'>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Nom</label>
-                                <input required type="text" name="name" class="form-control" value="{{ $user->name }}" id='name'>
+                                <input required type="text" name="lastName" class="form-control" value="{{ $user->lastName }}" id='lastName'>
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -89,8 +89,9 @@
 
 
                 <div class="form-group col-sm-8">
-                    <button type="submit" class="btn btnYellow rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Mettre à jour</button>
-            </form>
+                    <button type="submit" class="btn btnBlue rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Mettre à jour</button>
+                    <a href="{{ route('user.index')}}" class="btn btnBlue"><i class="bi bi-arrow-return-left"></i> Retour à la liste</a>
+                </form>
 
             <form action="{{route('user.destroy', $user)}}" method="post">
                 @CSRF
