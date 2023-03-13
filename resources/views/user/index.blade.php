@@ -27,7 +27,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Pseudo</th>
+                            {{-- <th scope="col">Pseudo</th> --}}
                             <th scope="col">email</th>
                             <th scope="col">Prénom</th>
                             <th scope="col">Nom</th>
@@ -45,7 +45,7 @@
                         @foreach($users as $user)
                         <tr>
 
-                            <td>{{$user->pseudo}}</td>
+                            {{-- <td>{{$user->pseudo}}</td> --}}
                             <td>{{$user->firstName}}</td>
                             <td>{{$user->lastName}}</td>
                             <td>{{$user->email}}</td>

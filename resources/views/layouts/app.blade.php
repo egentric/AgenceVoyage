@@ -43,11 +43,11 @@
                     <a class="nav-link" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Connexion</a>
+                    <a class="nav-link" href="{{ route('login') }}">Connexion</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="event.preventDefault();
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">déconnexion</a>
                     <form id="logout-form" action="#" method="POST" class="d-none">
                         @csrf
@@ -55,7 +55,7 @@
                 </li>
 
                  <li class="nav-item">
-                    <a class="nav-link" href="#">enregistrement</a>
+                    <a class="nav-link" href="{{ route('register') }}">enregistrement</a>
                 </li>
 
             </ul>
@@ -90,31 +90,31 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link align-middle px-0">
+                <a href="{{ route('themes.index')}}" class="nav-link align-middle px-0">
                     <i class="bi bi-clipboard-heart"></i>
                   <span class="ms-1 d-none d-sm-inline">Thèmes</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link align-middle px-0">
+                <a href="{{ route('types.index')}}" class="nav-link align-middle px-0">
                   <i class="bi bi-house-heart"></i>
                   <span class="ms-1 d-none d-sm-inline">Types</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link align-middle px-0">
+                <a href="{{ route('countries.index')}}" class="nav-link align-middle px-0">
                     <i class="bi bi-globe-europe-africa"></i>
                   <span class="ms-1 d-none d-sm-inline">Pays</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link align-middle px-0">
+                <a href="{{ route('cities.index')}}" class="nav-link align-middle px-0">
                     <i class="bi bi-geo"></i>
                   <span class="ms-1 d-none d-sm-inline">Villes</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link align-middle px-0">
+                <a href="{{ route('contacts.index')}}" class="nav-link align-middle px-0">
                     <i class="bi bi-envelope-at"></i>
                   <span class="ms-1 d-none d-sm-inline">Contacts</span>
                 </a>
@@ -123,14 +123,14 @@
            
             
             <li>
-              <a href="#" class="nav-link px-0 align-middle ">
+              <a href="{{ route('user.index')}}" class="nav-link px-0 align-middle ">
                 <i class="fs-4 bi-people"></i>
                 <span class="ms-1 d-none d-sm-inline">Utilisateur</span>
               </a>
             </li>
                     <li>
                         <a href="
-                        {{-- {{ route('users.edit', $user = Auth::user())}} --}}
+                        {{ route('user.edit', $user = Auth::user())}}
                         " class="nav-link px-0 align-middle">
                             <i class="fs-4 bi bi-person"></i>
                             <span class="ms-1 d-none d-sm-inline">Mon Compte</span>

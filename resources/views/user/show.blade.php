@@ -29,10 +29,10 @@
             <th>Id</th>
             <td>{{$user->id}}</td>
         </tr> --}}
-        <tr>
+        {{-- <tr>
             <th>Pseudo</th>
             <td>{{$user->pseudo}}</td>
-        </tr>
+        </tr> --}}
         <tr>
             <th>email</th>
             <td>{{$user->email}}</td>

@@ -62,7 +62,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'pseudo' => 'required|max:40',
+            // 'pseudo' => 'required|max:40',
             'email' => 'required|string',
             'firstName' =>'required|string',
             'lastName' =>'required|string',
@@ -76,7 +76,7 @@ class UserController extends Controller
         ]);
 
                 //on modifie les infos de l'utilisateur
-                $user->pseudo = $request->input('pseudo');
+                // $user->pseudo = $request->input('pseudo');
                 $user->email = $request->input('email');
                 $user->firstName = $request->input('firstName');
                 $user->lastName = $request->input('lastName');

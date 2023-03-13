@@ -28,13 +28,13 @@
                 <p class="card-text">
 
                 <div class="row mt-2">
-                    <div class="col-sm-4">
+                    {{-- <div class="col-sm-4">
                         <div class="form-group">
                             <label>Pseudo</label>
                             <input required type="text" name="pseudo" class="form-control" value="{{ $user->pseudo }}" id='pseudo'>
                         </div>
-                    </div>
-                    <div class="col-sm-8">
+                    </div> --}}
+                    <div class="col-sm-12">
                         <div class="form-group">
                             <label>E-mail</label>
                             <input required type="text" name="email" class="form-control" value="{{ $user->email }}" id='email'>
@@ -90,7 +90,35 @@
 
                 </div>
 
+                <div class="row mt-2">
 
+                    <div class="col-sm-3">
+
+                            @if ((Auth::user()->role) === 'admin')
+                                <div class="form-group col-sm-4">
+                                    <fieldset>
+                                        <label>Role :</label>
+
+                                        <div>
+                                            <input type="radio" id="user" name="role" value=user @if ($user->role == 'user') checked @endif>
+                                            <label for="user">User</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="radio" id="admin" name="role" value=admin @if ($user->role == 'admin') checked @endif>
+                                            <label for="admin">Admin</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            @else
+                                <input id="user" name="role" type="hidden" value=user>
+                            @endif
+
+
+
+
+                    </div>
+                </div>
 
                 </p>
 
