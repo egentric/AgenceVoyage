@@ -37,7 +37,7 @@
                         <tr>
 
                             <td>{{$city->name}}</td>
-                            <td>Pays</td>
+                            <td>{{$city->country->name}}</td>
                             <td>
                                 <a href="{{ route('cities.edit', $city->id)}}" class="btn btn-sm"><i class=" bi bi-pencil-square"></i> Editer</a>
                                 <form action="{{ route('cities.destroy', $city->id)}}" method="POST" style="display: inline-block">
