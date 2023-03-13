@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => ['guest']], function () {
+    // Connexion
+    Route::get('/login', [App\Http\Controllers\AuthController::class, 'show'])->name('login');
+    Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login.connection');
+});
+
+/**
+ * Utilisateur connecté
+ */
+
+Route::group(['middleware' => ['auth']], function () {
+    // Déconnexion
+    Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+});
