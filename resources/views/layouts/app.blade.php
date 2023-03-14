@@ -43,9 +43,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Connexion</a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -55,9 +55,9 @@
             </form>
           </li>
 
-                 <li class="nav-item">
+                 {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('register') }}">enregistrement</a>
-                </li>
+                </li> --}}
 
         </ul>
       </div>
@@ -73,7 +73,7 @@
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100 mt-4">
           <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
             <li class="nav-item">
-              <a href="#" class="nav-link align-middle px-0">
+              <a href="dashboard" class="nav-link align-middle px-0">
                 <i class="fs-4 bi-speedometer2"></i>
                 <span class="ms-1 d-none d-sm-inline">Dashboard</span>
               </a>
@@ -85,7 +85,7 @@
               </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link align-middle px-0">
+                <a href="{{ route('travels.index')}}" class="nav-link align-middle px-0">
                     <i class="bi bi-airplane"></i>
                   <span class="ms-1 d-none d-sm-inline">Voyages</span>
                 </a>

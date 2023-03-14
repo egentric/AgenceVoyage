@@ -9,7 +9,6 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Liste des voyages</h5>
-
             <!-- Message d'information -->
             @if ($errors->any())
             <div class="alert alert-danger">

@@ -1,7 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\TravelController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,10 +50,8 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['role:admin'], 'prefix' => 'dashboard'], function () {
-        Route::get('/', function() { 
-            return 'Page access only admin';
-        });
-        Route::resource('/dashboard', \App\Http\Controllers\DashboardController::class);
+
+        Route::resource('/', \App\Http\Controllers\DashboardController::class);
         Route::resource('/themes', \App\Http\Controllers\ThemeController::class);
         Route::resource('/types', \App\Http\Controllers\TypeController::class);
         Route::resource('/countries', \App\Http\Controllers\CountryController::class);
@@ -53,6 +59,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('/travels', \App\Http\Controllers\TravelController::class);
         Route::resource('/user', \App\Http\Controllers\UserController::class)->except('create');
         Route::resource('/contacts', \App\Http\Controllers\ContactController::class);
+        Route::resource('/askeds', \App\Http\Controllers\AskedsController::class);
 
     });
     // Déconnexion
