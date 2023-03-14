@@ -29,7 +29,6 @@ class CountryController extends Controller
      */
     public function store(CountryRequest $request)
     {
-       // Créer le post, et enregistre l'image dans le dossier storage
        $country = Country::create($request->validated());
 
         return redirect(route("countries.index"))->with('success', 'Pays créer !'); 

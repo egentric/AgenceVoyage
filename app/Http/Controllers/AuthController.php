@@ -129,6 +129,12 @@ class AuthController extends Controller
                 ->update([
                     'token' => $token
                 ]);
+        }else{
+            DB::table('password_reset_tokens')->insert([
+                'email' => $request->email, 
+                'token' => $token, 
+                'created_at' => Carbon::now()
+            ]);
         }
 
 

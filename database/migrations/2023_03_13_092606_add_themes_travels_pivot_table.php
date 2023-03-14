@@ -11,18 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('themes_travels', function (Blueprint $table) {
+        Schema::create('theme_travel', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('idTheme')->unsigned();
-            $table->foreign('idTheme')
+            $table->bigInteger('theme_id')->unsigned();
+            $table->foreign('theme_id')
                 ->references('id')
-                ->on('themes');
+                ->on('themes')
+                ->onDelete('cascade');
 
-            $table->bigInteger('idTravel')->unsigned();
-            $table->foreign('idTravel')
+            $table->bigInteger('travel_id')->unsigned();
+            $table->foreign('travel_id')
                 ->references('id')
-                ->on('travels');
+                ->on('travels')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -33,9 +35,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('themes_travels', function (Blueprint $table) {
-            $table->dropColumn('idTheme');
-            $table->dropColumn('idTravel');
+        Schema::table('theme_travel', function (Blueprint $table) {
+            $table->dropColumn('theme_id');
+            $table->dropColumn('travel_id');
         });
     }
 };

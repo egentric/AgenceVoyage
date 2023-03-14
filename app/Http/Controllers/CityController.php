@@ -32,7 +32,6 @@ class CityController extends Controller
      */
     public function store(CityRequest $request)
     {
-        // Créer le post, et enregistre l'image dans le dossier storage
         $country = Country::findOrFail($request->country);
         $city = City::create(array_merge($request->validated(), [
             'idCountry' => $country->id,

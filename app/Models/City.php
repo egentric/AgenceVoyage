@@ -11,6 +11,6 @@ class City extends Model
     protected $fillable = ['name', 'idCountry'];
 
     public function country() {
-        return $this->belongsTo(Country::class); 
+        return $this->belongsTo(Country::class, 'idCountry', 'id'); 
     }
 }

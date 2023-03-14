@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Travel extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'intro', 'description', 'duration', 'price', 'idCity'];
+    protected $table = 'travels';
+    protected $fillable = ['name', 'intro', 'description', 'duration', 'price', 'departCity', 'destinationCity'];
 
-    public function city() {
-        return $this->belongsTo(City::class); 
+    public function destination() {
+        return $this->belongsTo(City::class, 'destinationCity', 'id'); 
     }
 
     public function askeds() {
@@ -19,14 +20,14 @@ class Travel extends Model
     }
 
     public function themes() {
-        return $this->hasMany(Theme::class);
+        return $this->belongsToMany(Theme::class);
     }
 
     public function types() {
-        return $this->hasMany(Type::class);
+        return $this->belongsToMany(Type::class, 'type_travel');
     }
 
     public function pictures() {
-        return $this->hasMany(Picture::class);
+        return $this->hasMany(Picture::class, 'idTravel', 'id');
     }
 }

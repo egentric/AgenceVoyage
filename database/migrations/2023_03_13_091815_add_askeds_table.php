@@ -19,12 +19,14 @@ return new class extends Migration
             $table->bigInteger('idUser')->unsigned();
             $table->foreign('idUser')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
 
             $table->bigInteger('idTravel')->unsigned();
             $table->foreign('idTravel')
                 ->references('id')
-                ->on('travels');
+                ->on('travels')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

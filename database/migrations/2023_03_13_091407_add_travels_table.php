@@ -19,10 +19,16 @@ return new class extends Migration
             $table->string('duration');
             $table->string('price');
 
-            $table->bigInteger('idCity')->unsigned();
-            $table->foreign('idCity')
+            $table->bigInteger('departCity')->unsigned();
+            $table->foreign('departCity')
                 ->references('id')
                 ->on('cities');
+
+            
+                $table->bigInteger('destinationCity')->unsigned();
+                $table->foreign('destinationCity')
+                    ->references('id')
+                    ->on('cities');
             $table->timestamps();
             
         });
@@ -34,7 +40,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('travels', function (Blueprint $table) { 
-            $table->dropColumn('idCity');
+            $table->dropColumn('departCity');
+            $table->dropColumn('destinationCity');
         });
     }
 };
