@@ -73,7 +73,7 @@
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100 mt-4">
           <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
             <li class="nav-item">
-              <a href="dashboard" class="nav-link align-middle px-0">
+              <a href="{{ route('index')}}" class="nav-link align-middle px-0">
                 <i class="fs-4 bi-speedometer2"></i>
                 <span class="ms-1 d-none d-sm-inline">Dashboard</span>
               </a>
