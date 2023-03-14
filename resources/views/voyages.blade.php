@@ -115,10 +115,12 @@
                 </div>
 
                 @foreach($travels as $travel)
-                <div class="col-3">
+                <div class="col-3 mb-4">
                     <a href="{{ route('travels.show', $travel) }}" class="card">
                         <div class="img-container">
-                            <img src="{{ asset('storage/'.$travel->pictures[0]->url) }}" alt="{{$travel->pictures[0]->name}}" class="mw-100">
+                            @if (!empty($travel->pictures[0]))
+                                <img src="{{ asset('storage/'.$travel->pictures[0]->url) }}" alt="{{$travel->pictures[0]->name}}" class="mw-100">
+                            @endif
                             <div class="price">
                                 <span class="price-num">{{$travel->price}}€</span>
                                 <span class="ttc">TTC/PERS.</span>
@@ -132,6 +134,8 @@
                     </a>
                 </div>
                 @endforeach
+
+                {{$travels->links()}}
             </div>
         </div>
     </div>

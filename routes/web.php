@@ -30,7 +30,7 @@ Route::get('/voyages', function () {
     $types = Type::all();
     $themes = Theme::all();
     $cities = City::all();
-    $travels = Travel::all();
+    $travels = Travel::orderBy('created_at', 'DESC')->paginate(12);
 
     return view('voyages', compact('types', 'themes', 'cities', 'travels'));
 })->name('voyages');
