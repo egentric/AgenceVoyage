@@ -24,8 +24,9 @@
 
   <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 
-  <link rel="stylesheet" href=" {{ asset('css/style.css') }}">
   @vite(['resources/css/app.scss', 'resources/js/app.js'])
+
+  <link rel="stylesheet" href=" {{ asset('css/style.css') }}">
 </head>
 
 <body>
@@ -43,9 +44,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Connexion</a>
-                </li> --}}
+
 
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -70,13 +69,13 @@
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100 mt-4">
           <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
             <li class="nav-item">
-              <a href="dashboard" class="nav-link align-middle px-0">
+              <a href="{{ route('index')}}" class="nav-link align-middle px-0">
                 <i class="fs-4 bi-speedometer2"></i>
                 <span class="ms-1 d-none d-sm-inline">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link align-middle px-0">
+              <a href="{{ route('askeds.index')}}" class="nav-link align-middle px-0">
                 <i class="bi bi-bookmarks"></i>
                 <span class="ms-1 d-none d-sm-inline">Demandes</span>
               </a>
