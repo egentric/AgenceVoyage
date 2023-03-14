@@ -1,15 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CityController;
-use App\Http\Controllers\TypeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ThemeController;
-use App\Http\Controllers\TravelController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\CountryController;
-use App\Http\Controllers\DashboardController;
 use App\Models\City;
 use App\Models\Theme;
 use App\Models\Travel;
