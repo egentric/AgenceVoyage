@@ -49,9 +49,7 @@ class RegisterRequest extends FormRequest
             'email.unique' => 'L\'email est déjà utilisé pour un autre compte.',
 
             'password.min' => 'Le mot de passe doit contenir minimum 8 caractères.',
-            'password.regex' => 'Le mot de passe doit contenir au moin une lettre',
-            'password.regex' => 'Le mot de passe doit contenir au moin un numéro',
-            'password.regex' => 'Le mot de passe doit contenir au moin un caractère spécial (@$!%*#?&)',
+            'password.regex' => 'Le mot de passe doit contenir au moin une lettre, un numéro et un caractère spécial (@$!%*#?&)',
         ];
     }
 }

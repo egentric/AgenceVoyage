@@ -11,18 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('types_travels', function (Blueprint $table) {
+        Schema::create('type_travel', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('idType')->unsigned();
-            $table->foreign('idType')
+            $table->bigInteger('type_id')->unsigned();
+            $table->foreign('type_id')
                 ->references('id')
-                ->on('types');
+                ->on('types')
+                ->onDelete('cascade');
 
-            $table->bigInteger('idTravel')->unsigned();
-            $table->foreign('idTravel')
+            $table->bigInteger('travel_id')->unsigned();
+            $table->foreign('travel_id')
                 ->references('id')
-                ->on('travels');
+                ->on('travels')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -33,9 +35,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('types_travels', function (Blueprint $table) {
-            $table->dropColumn('idType');
-            $table->dropColumn('idTravel');
+        Schema::table('type_travel', function (Blueprint $table) {
+            $table->dropColumn('type_id');
+            $table->dropColumn('travel_id');
         });
     }
 };

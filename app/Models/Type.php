@@ -11,6 +11,6 @@ class Type extends Model
     protected $fillable = ['name', 'description', 'idTravel'];
 
     public function travel() {
-        return $this->belongsTo(Travel::class); 
+        return $this->belongsToMany(Travel::class, 'type_travel'); 
     }
 }

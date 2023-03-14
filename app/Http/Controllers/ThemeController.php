@@ -29,7 +29,6 @@ class ThemeController extends Controller
      */
     public function store(ThemeRequest $request)
     {
-       // Créer le post, et enregistre l'image dans le dossier storage
        $theme = Theme::create($request->validated());
 
         return redirect(route("themes.index"))->with('success', 'Thème créer !'); 

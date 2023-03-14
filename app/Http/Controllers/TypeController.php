@@ -29,7 +29,6 @@ class TypeController extends Controller
      */
     public function store(TypeRequest $request)
     {
-       // Créer le post, et enregistre l'image dans le dossier storage
        $type = Type::create($request->validated());
 
         return redirect(route("types.index"))->with('success', 'Thème créer !'); 
