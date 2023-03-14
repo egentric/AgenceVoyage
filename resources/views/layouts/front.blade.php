@@ -20,20 +20,30 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 </head>
 
 <body id="{{Route::currentRouteName()}}">
     @include('components.header')
-    
+
     <main>
         @yield('content')
     </main>
 
     @include('components.footer')
     @yield('scripts-bottom')
+    <script>
+        // Sticky header on scroll
+        $(window).scroll(function() {
+            var sticky = $('#header .navbar-container'),
+                scroll = $(window).scrollTop();
+
+            if (scroll >= 100) sticky.addClass('is-sticky');
+            else sticky.removeClass('is-sticky');
+        });
+    </script>
 </body>
 
 </html>

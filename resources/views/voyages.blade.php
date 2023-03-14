@@ -6,12 +6,6 @@
 @section('content')
 <section id="hero_banner">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12 text-center">
-                <span>Laissez votre voyage commencer</span>
-                <h1>Explorez le monde avec notre agence de voyage</h1>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -112,66 +106,29 @@
         </div>
 </section>
 
-<section id="next_travel">
+<section id="travel_lists">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <span>Ça vous ferai du bien</span>
-                <h2>Découvrez nos trois derniers voyages.</h2>
-                <p>Réservez dès maintenant l'un de ces trois voyages d'exception et vivez des moments inoubliables !</p>
-            </div>
+            <div class="col-lg-12 travel_search_form row">
+                <div class="col-lg-12">
+                    <h2>5 Voyages</h2>
+                </div>
 
-            @foreach($travels as $travel)
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="travel-content">
-                    <a href="{{ route('travels.show', $travel) }}">
-                        <img src="{{ asset('storage/'.$travel->pictures[0]->url) }}" alt="{{$travel->pictures[0]->name}}">
-                        <h3>{{$travel->name}}</h3>
+                <div class="col-3">
+                    <a href="">
+                        <div class="img-container">
+                            <img src="" alt="">
+                            <div>
+                                <span>24€</span>
+                                <span>TTC/PERS.</span>
+                            </div>
+                        </div>
+                        <h3>Le titre du voyage</h3>
+                        <p>France, Paris</p>
+                        <p>Durée</p>
                     </a>
                 </div>
             </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<section id="types_list">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12 text-center">
-                <h2>Découvrez nos différents types de voyage</h2>
-            </div>
-
-            @foreach($types as $type)
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">{{$type->name}}</h3>
-                        <p class="card-text">{{$type->description}}</p>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<section id="themes_list">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12 text-center">
-                <h2>Découvrez nos différents thèmes</h2>
-            </div>
-            @foreach($themes as $theme)
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">{{$theme->name}}</h3>
-                        <p class="card-text">{{$theme->description}}</p>
-                    </div>
-                </div>
-            </div>
-            @endforeach
         </div>
     </div>
 </section>

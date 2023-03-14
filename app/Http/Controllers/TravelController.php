@@ -83,18 +83,20 @@ class TravelController extends Controller
         $travel->types()->sync($request->types);
 
         // Vérifie si les images actuelles ont été supprimer
-        if ($request->crtImage) {
-            foreach ($travel->pictures as $picture) {
-                if (!in_array($picture->id, $request->crtImage)) {
-                    if (Storage::disk('public')->exists($picture->url)) Storage::delete($picture->url);
-                    $picture->delete();
-                }
+        foreach ($travel->pictures as $picture) {
+            if (
+                !($request->crtImage) ||
+                (($request->crtImage) && (!in_array($picture->id, $request->crtImage)))
+            ) {
+                if (Storage::disk('public')->exists($picture->url)) Storage::delete($picture->url);
+                $picture->delete();
             }
         }
 
         // Ajout les nouvelles images
         if ($request->pictures) {
             foreach ($request->pictures as $k => $picture) {
+                dump($picture);
                 $newName = $travel->id . '_' . $picture->getClientOriginalName();
                 $newPicture = new Picture([
                     'name' => $request->picturesName[$k],

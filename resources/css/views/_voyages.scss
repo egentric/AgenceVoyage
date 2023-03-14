@@ -1,12 +1,7 @@
-$primary: #ffa84c;
-
-#home {
+#voyages {
   #hero_banner {
-    background-image: url(../../public/images/hero-banner-ripped.png);
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 700px;
+    background-color: $primary;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +88,7 @@ $primary: #ffa84c;
   }
 
   #next_travel {
-    padding-top: 64px;
+    padding: 64px 0;
 
     span {
       color: $primary;
@@ -140,30 +135,6 @@ $primary: #ffa84c;
         &:hover img{
           transform: scale(1.2);
         }
-    }
-  }
-
-  #types_list {
-    padding-top: 64px;
-    h2{
-      color: #000;
-      font-size: 40px;
-      font-weight: 600;
-      line-height: 48px;
-      font-family: "Poppins", sans-serif;
-      margin-bottom: 32px;
-    }
-  }
-
-  #themes_list {
-    padding:64px 0;
-    h2{
-      color: #000;
-      font-size: 40px;
-      font-weight: 600;
-      line-height: 48px;
-      font-family: "Poppins", sans-serif;
-      margin-bottom: 32px;
     }
   }
 }

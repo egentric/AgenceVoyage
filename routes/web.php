@@ -26,6 +26,15 @@ Route::get('/', function () {
     return view('home', compact('types', 'themes', 'cities', 'travels'));
 })->name('home');
 
+Route::get('/voyages', function () {
+    $types = Type::all();
+    $themes = Theme::all();
+    $cities = City::all();
+    $travels = Travel::all();
+
+    return view('voyages', compact('types', 'themes', 'cities', 'travels'));
+})->name('voyages');
+
 
 Route::group(['middleware' => ['guest']], function () {
     // Connexion
