@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('/types', \App\Http\Controllers\TypeController::class);
         Route::resource('/countries', \App\Http\Controllers\CountryController::class);
         Route::resource('/cities', \App\Http\Controllers\CityController::class);
+        Route::resource('/travels', \App\Http\Controllers\TravelController::class);
         Route::resource('/user', \App\Http\Controllers\UserController::class)->except('create');
     });
     // Déconnexion

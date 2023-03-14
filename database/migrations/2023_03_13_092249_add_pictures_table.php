@@ -19,7 +19,8 @@ return new class extends Migration
             $table->bigInteger('idTravel')->unsigned(); 
             $table->foreign('idTravel')
                 ->references('id')
-                ->on('travels');
+                ->on('travels')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
