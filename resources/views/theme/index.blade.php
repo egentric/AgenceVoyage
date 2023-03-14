@@ -9,6 +9,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Liste des thèmes</h5>
+            <a href="{{ route('themes.create') }}" class="btn btnBlue"><i class="bi bi-file-earmark-plus"></i> Créer</a>
 
             <!-- Message d'information -->
             @if ($errors->any())
@@ -39,11 +40,11 @@
                             <td>{{$theme->name}}</td>
                             <td>{{$theme->description}}</td>
                             <td>
-                                <a href="{{ route('themes.edit', $theme->id)}}" class="btn btn-sm"><i class=" bi bi-pencil-square"></i> Editer</a>
+                                <a href="{{ route('themes.edit', $theme->id)}}" class="btn btn-sm btnBlue"><i class=" bi bi-pencil-square"></i> Editer</a>
                                 <form action="{{ route('themes.destroy', $theme->id)}}" method="POST" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm" type=" submit"><i class="bi bi-trash3"></i> Supprimer</button>
+                                    <button class="btn btn-sm btnRed" type=" submit"><i class="bi bi-trash3"></i> Supprimer</button>
                             </td>
                         </tr>
                         @endforeach

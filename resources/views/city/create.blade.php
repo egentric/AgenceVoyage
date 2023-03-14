@@ -26,13 +26,15 @@
                 @csrf
                 <p class="card-text">
 
-                <div class="row">
+                <div class="row mt-2">
                     <div class="col-12 mb-4">
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input required type="text" name="name" class="form-control" value="{{ old('name') }}" id='name'>
                         </div>
                     </div>
+                </div>
+                <div class="row mt-2"">
 
                     <div class="col-12 mb-4">
                         <div class="form-group">
@@ -50,7 +52,7 @@
 
 
                 <div class="form-group col-sm-8">
-                    <button type="submit" class="btn btnYellow rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Ajouter</button>
+                    <button type="submit" class="btn btnBlue rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Ajouter</button>
                 </div>
             </form>
         </div>

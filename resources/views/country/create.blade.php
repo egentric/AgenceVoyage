@@ -26,13 +26,16 @@
                 @csrf
                 <p class="card-text">
 
-                <div class="row">
+                <div class="row mt-2">
                     <div class="col-12 mb-4">
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input required type="text" name="name" class="form-control" value="{{ old('name') }}" id='name'>
                         </div>
                     </div>
+                </div>
+                <div class="row mt-2"">
+
 
                     <div class="col-12 mb-4">
                         <div class="form-group">

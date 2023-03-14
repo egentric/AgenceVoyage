@@ -10,10 +10,10 @@
 // ================================================================
 
 $blue1: #023059;
-$blue2: #5D7CA6;
-$blue3: #73A2BF;
+$blue2: #9caeca;
+$blue3: #d3e0e9;
 
-$beige: #F2CAA7;
+$beige: #fceddf;
 
 $chestnut: #59362E;
 
@@ -27,7 +27,7 @@ $grey1: #444444;
 
 body {
     font-family: 'Mukta', sans-serif;
-    color: $chestnut;
+    color: $blue1;
     background-color: $beige;
 }
 
@@ -59,6 +59,7 @@ h4 {
 h5 {
     font-family: 'Merriweather', serif;
     color: $blue1 !important;
+    font-weight: 600;
 }
 
 // CARD

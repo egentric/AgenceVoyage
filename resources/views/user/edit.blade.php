@@ -5,7 +5,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h4>Mon Compte</h4>
+            <h4>Compte de {{ $user->firstName }} {{ $user->lastName }}</h4>
         </div>
         <div class="card-body">
             <h5 class="card-title">Modifier mes informations</h5>

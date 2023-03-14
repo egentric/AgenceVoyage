@@ -5,8 +5,8 @@
 
 body {
   font-family: "Mukta", sans-serif;
-  color: #59362E;
-  background-color: #F2CAA7;
+  color: #023059;
+  background-color: #fceddf;
 }
 
 h1 {
@@ -36,6 +36,7 @@ h4 {
 h5 {
   font-family: "Merriweather", serif;
   color: #023059 !important;
+  font-weight: 600;
 }
 
 .card {
@@ -46,11 +47,11 @@ h5 {
 }
 
 .card-header {
-  background-color: #5D7CA6;
+  background-color: #9caeca;
 }
 
 .card-body {
-  background-color: #73A2BF;
+  background-color: #d3e0e9;
 }
 .card-body a {
   color: #023059;
@@ -60,7 +61,7 @@ h5 {
 }
 
 .card-title {
-  color: #5D7CA6;
+  color: #9caeca;
 }
 
 table {
@@ -68,11 +69,11 @@ table {
   border: 1px solid;
 }
 table tbody tr:nth-child(even) {
-  background-color: #F2CAA7;
+  background-color: #fceddf;
 }
 table thead {
   background-color: #023059;
-  color: #F2CAA7;
+  color: #fceddf;
 }
 table tbody {
   color: #023059;
@@ -89,7 +90,7 @@ table tbody {
 .btnBlue:hover {
   transition: 0.5s;
   background-color: #59362E;
-  color: #F2CAA7 !important;
+  color: #fceddf !important;
 }
 
 .btnRed {
@@ -103,48 +104,48 @@ table tbody {
 .btnRed:hover {
   transition: 0.5s;
   background-color: #A63C3C;
-  color: #F2CAA7 !important;
+  color: #fceddf !important;
 }
 
 select {
-  background-color: #F2CAA7 !important;
+  background-color: #fceddf !important;
   color: #444444 !important;
 }
 
 input {
-  background-color: #F2CAA7 !important;
+  background-color: #fceddf !important;
   color: #444444 !important;
 }
 
 textarea {
-  background-color: #F2CAA7 !important;
+  background-color: #fceddf !important;
   color: #444444 !important;
 }
 
 .ck {
-  background-color: #F2CAA7 !important;
+  background-color: #fceddf !important;
   color: #444444 !important;
 }
 
 nav {
   background-color: #023059 !important;
-  color: #F2CAA7;
+  color: #fceddf;
 }
 nav a {
-  color: #F2CAA7 !important;
+  color: #fceddf !important;
 }
 nav a:hover {
-  color: #73A2BF !important;
+  color: #d3e0e9 !important;
 }
 
 .menuGauche {
-  background-color: #5D7CA6;
+  background-color: #9caeca;
 }
 .menuGauche a {
   color: #023059;
 }
 .menuGauche a:hover {
-  color: #F2CAA7;
+  color: #fceddf;
 }
 
 a {

@@ -9,6 +9,8 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Liste des types</h5>
+            <a href="{{ route('types.create') }}" class="btn btnBlue"><i class="bi bi-file-earmark-plus"></i> Créer</a>
+
 
             <!-- Message d'information -->
             @if ($errors->any())
@@ -39,11 +41,11 @@
                             <td>{{$type->name}}</td>
                             <td>{{$type->description}}</td>
                             <td>
-                                <a href="{{ route('types.edit', $type->id)}}" class="btn btn-sm"><i class=" bi bi-pencil-square"></i> Editer</a>
+                                <a href="{{ route('types.edit', $type->id)}}" class="btn btn-sm btnBlue"><i class=" bi bi-pencil-square"></i> Editer</a>
                                 <form action="{{ route('types.destroy', $type->id)}}" method="POST" style="display: inline-block">
-                                    @csrf
+                                    @csrf 
                                     @method('DELETE')
-                                    <button class="btn btn-sm" type=" submit"><i class="bi bi-trash3"></i> Supprimer</button>
+                                    <button class="btn btn-sm btnRed" type=" submit"><i class="bi bi-trash3"></i> Supprimer</button>
                             </td>
                         </tr>
                         @endforeach
@@ -52,6 +54,7 @@
             </div>
             <!-- Fin du Tableau -->
             </p>
+
         </div>
     </div>
 

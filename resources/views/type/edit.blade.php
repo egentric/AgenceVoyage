@@ -27,13 +27,16 @@
                 @method('put')
                 <p class="card-text">
 
-                <div class="row">
+                <div class="row mt-2"">
                     <div class="col-12 mb-4">
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input required type="text" name="name" class="form-control" value="{{ $type->name }}" id='name'>
                         </div>
                     </div>
+                </div>
+                <div class="row mt-2"">
+
                     <div class="col-12 mb-4">
                         <div class="form-group">
                             <label for="description">Description</label>
@@ -46,7 +49,8 @@
 
 
                 <div class="form-group col-sm-8">
-                    <button type="submit" class="btn btnYellow rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Modifier</button>
+                    <button type="submit" class="btn btnBlue rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Modifier</button>
+                    <a href="{{ route('types.index')}}" class="btn btnBlue"><i class="bi bi-arrow-return-left"></i> Retour à la liste</a>
                 </div>
             </form>
 
