@@ -36,7 +36,7 @@
                     <div class="col-12 mb-4">
                         <div class="form-group">
                             <label for="intro">Courte description du voyage</label>
-                            <textarea id="intro" name="intro" class="form-control h-100" rows="5">{{old('intro')}}</textarea>
+                            <textarea id="intro" name="intro" class="form-control h-100" rows="2">{{old('intro')}}</textarea>
                         </div>
                     </div>
 
@@ -97,8 +97,8 @@
                             <div class="form-group">
                                 <label for="destinationCity">Thèmes</label>
                                 @foreach($themes as $theme)
-                                <li class="list-group-item">
-                                    <input class="form-check-input" type="checkbox" value="{{$theme->id}}" id="idTheme-{{$theme->id}}" name="themes[]" />
+                                <li class="list-group-item list">
+                                    <input class="form-check-input check" type="checkbox" value="{{$theme->id}}" id="idTheme-{{$theme->id}}" name="themes[]" />
                                     <label class="form-check-label" for="idTheme-{{$theme->id}}">-{{$theme->name}}</label>
                                 </li>
                                 @endforeach
@@ -111,8 +111,8 @@
                             <div class="form-group">
                                 <label for="destinationCity">Types</label>
                                 @foreach($types as $type)
-                                <li class="list-group-item">
-                                    <input class="form-check-input" type="checkbox" value="{{$type->id}}" id="idType-{{$type->id}}" name="types[]" />
+                                <li class="list-group-item list">
+                                    <input class="form-check-input check" type="checkbox" value="{{$type->id}}" id="idType-{{$type->id}}" name="types[]" />
                                     <label class="form-check-label" for="idType-{{$type->id}}">-{{$type->name}}</label>
                                 </li>
                                 @endforeach
@@ -125,7 +125,7 @@
 
 
                 <div class="form-group col-sm-8">
-                    <button type="submit" class="btn btnYellow rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Ajouter</button>
+                    <button type="submit" class="btn btnBlue rounded-pillshadow-sm"><i class="bi bi-save2 "></i> Ajouter</button>
                 </div>
             </form>
         </div>

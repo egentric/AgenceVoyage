@@ -49,20 +49,20 @@
                             <td>{{$travel->destination->name}} ({{$travel->destination->country->code}})</td>
                             <td>
                                 @foreach ($travel->themes as $theme)
-                                <span class="badge badge-secondary">{{ $theme->name }}</span>
+                                <span class="badge bg-secondary">{{ $theme->name }}</span>
                                 @endforeach
                             </td>
                             <td>
                                 @foreach ($travel->types as $type)
-                                <span class="badge badge-secondary">{{ $type->name }}</span>
+                                <span class="badge bg-secondary">{{ $type->name }}</span>
                                 @endforeach
                             </td>
                             <td>
-                                <a href="{{ route('travels.edit', $travel->id)}}" class="btn btn-sm"><i class=" bi bi-pencil-square"></i> Editer</a>
+                                <a href="{{ route('travels.edit', $travel->id)}}" class="btn btn-sm btnBlue"><i class=" bi bi-pencil-square"></i> Editer</a>
                                 <form action="{{ route('travels.destroy', $travel->id)}}" method="POST" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm" type=" submit"><i class="bi bi-trash3"></i> Supprimer</button>
+                                    <button class="btn btn-sm btnRed" type=" submit"><i class="bi bi-trash3"></i> Supprimer</button>
                                 </form>
                             </td>
                         </tr>
