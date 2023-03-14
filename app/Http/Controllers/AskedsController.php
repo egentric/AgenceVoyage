@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Asked;
+use App\Models\Travel;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AskedsController extends Controller
 {
@@ -11,7 +15,11 @@ class AskedsController extends Controller
      */
     public function index()
     {
-        //
+        $travels = Travel::all();
+        $user = User::all();
+        $askeds = Asked::all();
+        return view('askeds.index', compact('travels', 'user', 'askeds'));
+
     }
 
     /**
@@ -19,7 +27,11 @@ class AskedsController extends Controller
      */
     public function create()
     {
-        //
+        $travels = Travel::all();
+        $user = User::all();
+        $askeds = Asked::all();
+        return view('askeds.create', compact('travels', 'user', 'askeds'));
+
     }
 
     /**
@@ -27,7 +39,24 @@ class AskedsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'numberpeople' => 'required',
+            'status' => 'required',
+            'idUser' => 'required',
+            'idTravel' => 'required'
+
+        ]);
+
+        Asked::create([
+            'numberpeople' => $request ->numberPeople,
+            'status' => $request ->status,
+            'idUser' => $request ->idUser,
+            'idTravel' => $request ->idTravel,
+
+        ]);
+        return redirect()->route('askeds.index')
+        ->with('success', 'Produit ajouté avec succès !');
+
     }
 
     /**
@@ -35,7 +64,11 @@ class AskedsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $travels = Travel::all();
+        $user = User::all();
+        $askeds = Asked::all();
+        return view('askeds.show', compact('travels', 'user', 'askeds'));
+
     }
 
     /**
@@ -43,7 +76,8 @@ class AskedsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $askeds = Asked::findOrFail($id);
+        return view('askeds.edit', compact('askeds'));
     }
 
     /**
@@ -51,14 +85,21 @@ class AskedsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updateAsked = $request->validate([
+            'numberpeople' => 'required',
+            'status' => 'required'
+        ]);
+        Asked::whereId($id)->update($updateAsked);
+        return redirect()->route('askeds.index')
+        ->with('success', 'La demande à été mis à jour avec succès');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Asked $askeds)
     {
-        //
+        $askeds->delete();
+        return redirect(route('askeds.index'))->with('success', 'Demande supprimée !');
     }
 }

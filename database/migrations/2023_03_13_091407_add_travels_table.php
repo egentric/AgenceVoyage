@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('intro');
+            $table->string('intro', 255);
             $table->text('description');
             $table->string('duration');
             $table->string('price');

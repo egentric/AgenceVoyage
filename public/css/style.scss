@@ -33,7 +33,7 @@ body {
 
 h1 {
     font-family: 'Merriweather', serif;
-        color: $blue1;
+    color: $blue1;
     text-align: center;
     padding-top: 20px;
     margin-bottom: 30px;
@@ -160,6 +160,15 @@ select {
 input {
     background-color: $beige !important;
     color: $grey1 !important;
+    
+}
+
+.check{
+    background-color: $blue2 !important;
+}
+
+.list{
+    background-color: $beige !important;
 }
 
 textarea {

@@ -117,6 +117,14 @@ input {
   color: #444444 !important;
 }
 
+.check {
+  background-color: #9caeca !important;
+}
+
+.list {
+  background-color: #fceddf !important;
+}
+
 textarea {
   background-color: #fceddf !important;
   color: #444444 !important;

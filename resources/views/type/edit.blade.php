@@ -40,7 +40,7 @@
                     <div class="col-12 mb-4">
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea id="description" name="description" class="form-control h-100" rows="5">{{$type->description}}</textarea>
+                            <textarea id="description" name="description" class="form-control h-100" rows="2">{{$type->description}}</textarea>
                         </div>
                     </div>
 
