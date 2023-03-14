@@ -106,28 +106,36 @@
         </div>
 </section>
 
-<section id="travel_lists">
+<section id="travel_list">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12 travel_search_form row">
                 <div class="col-lg-12">
-                    <h2>5 Voyages</h2>
+                    <h2>{{count($travels)}} Voyage{{count($travels) > 1 ? 's' : ''}}</h2>
                 </div>
 
-                <div class="col-3">
-                    <a href="">
+                @foreach($travels as $travel)
+                <div class="col-3 mb-4">
+                    <a href="{{ route('travels.show', $travel) }}" class="card">
                         <div class="img-container">
-                            <img src="" alt="">
-                            <div>
-                                <span>24€</span>
-                                <span>TTC/PERS.</span>
+                            @if (!empty($travel->pictures[0]))
+                                <img src="{{ asset('storage/'.$travel->pictures[0]->url) }}" alt="{{$travel->pictures[0]->name}}" class="mw-100">
+                            @endif
+                            <div class="price">
+                                <span class="price-num">{{$travel->price}}€</span>
+                                <span class="ttc">TTC/PERS.</span>
                             </div>
                         </div>
-                        <h3>Le titre du voyage</h3>
-                        <p>France, Paris</p>
-                        <p>Durée</p>
+                        <div class="card-body">
+                            <h3>{{$travel->name}}</h3>
+                            <p>{{$travel->destination->country->name}}, {{$travel->destination->name}}</p>
+                            <p>{{$travel->duration}}</p>
+                        </div>
                     </a>
                 </div>
+                @endforeach
+
+                {{$travels->links()}}
             </div>
         </div>
     </div>
