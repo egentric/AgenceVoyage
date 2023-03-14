@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Models\City;
+use App\Models\Theme;
+use App\Models\Travel;
+use App\Models\Type;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +19,12 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $types = Type::all();
+    $themes = Theme::all();
+    $cities = City::all();
+    $travels = Travel::orderBy('created_at', 'DESC')->take(3)->get();
+    return view('home', compact('types', 'themes', 'cities', 'travels'));
+})->name('home');
 
 
 Route::group(['middleware' => ['guest']], function () {

@@ -1,0 +1,145 @@
+$primary: #ffa84c;
+
+#home {
+  #hero_banner {
+    background-image: url(../../public/images/hero-banner-ripped.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      color: $primary;
+      font-size: 34px;
+      line-height: 42px;
+      font-family: "Indie Flower", sans-serif;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 70px;
+      font-weight: 600;
+      line-height: 78px;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+
+  #travel_search {
+    margin-top: -75px;
+
+    .travel_search_form {
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 4px 14px 28px rgb(0 0 0 / 10%);
+
+      background-color: #fff;
+      background-image: url(../../public/images/lines-2.png);
+      background-position: center;
+      background-repeat: no-repeat;
+
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+
+      .col-4 {
+        .label-title {
+          font-family: "Indie Flower", sans-serif;
+          color: $primary;
+        }
+        .form-control {
+          background-color: #f2f2f2;
+        }
+        .dropdown-menu {
+          border-radius: 15px;
+          box-shadow: 4px 14px 28px rgb(0 0 0 / 10%);
+          margin-top: 7px;
+          padding: 16px 0;
+          width: 100%;
+          border: none;
+
+          .hasNoResults {
+            display: block;
+            padding: 10px;
+            color: #aaa;
+          }
+
+          .dropdown-item {
+            padding: 8px 16px;
+
+            &:hover {
+              color: #fff;
+              background-color: #ffa84c;
+            }
+          }
+        }
+
+        .open > .dropdown-menu,
+        .show > .dropdown-menu {
+          display: block;
+        }
+
+        button[type="submit"] {
+          background-color: $primary;
+          border-radius: 10px;
+          color: #fff;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  #next_travel {
+    padding: 64px 0;
+
+    span {
+      color: $primary;
+      font-size: 18px;
+      font-family: "Indie Flower", sans-serif;
+    }
+
+    h2 {
+      color: #000;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 48px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .travel-content{
+        height: 500px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform ease-in-out .4s;
+        }
+
+        h3{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 22px;
+            margin: 0;
+            background-image: linear-gradient(0deg, $primary, transparent);
+            color: #FFF;
+        }
+
+        &:hover img{
+          transform: scale(1.2);
+        }
+    }
+  }
+}

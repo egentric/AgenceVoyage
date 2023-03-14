@@ -9,6 +9,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Liste des voyages</h5>
+            <a href="{{ route('travels.create') }}" class="btn btnBlue"><i class="bi bi-file-earmark-plus"></i> Créer</a>
 
             <!-- Message d'information -->
             @if ($errors->any())
