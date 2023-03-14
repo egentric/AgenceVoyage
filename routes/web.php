@@ -10,6 +10,10 @@ use App\Http\Controllers\TravelController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DashboardController;
+use App\Models\City;
+use App\Models\Theme;
+use App\Models\Travel;
+use App\Models\Type;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +27,21 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $types = Type::all();
+    $themes = Theme::all();
+    $cities = City::all();
+    $travels = Travel::orderBy('created_at', 'DESC')->take(3)->get();
+    return view('home', compact('types', 'themes', 'cities', 'travels'));
+})->name('home');
+
+Route::get('/voyages', function () {
+    $types = Type::all();
+    $themes = Theme::all();
+    $cities = City::all();
+    $travels = Travel::all();
+
+    return view('voyages', compact('types', 'themes', 'cities', 'travels'));
+})->name('voyages');
 
 
 Route::group(['middleware' => ['guest']], function () {
